@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Maple Launch Copy",
+  "version": "1.5.0",
+  "description": "登入新楓之谷經典版後，自動複製當次 ngm://launch 啟動連結。",
+  "permissions": [
+    "clipboardWrite"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://maplestoryclassic.beanfun.com/*"
+      ],
+      "js": [
+        "bridge.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://maplestoryclassic.beanfun.com/*"
+      ],
+      "js": [
+        "capture.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}
